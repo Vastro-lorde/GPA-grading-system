@@ -4,20 +4,10 @@ using System.Text;
 
 namespace GPA_grading_system
 {
-    public class PrintTable
+    public static class PrintTable
     {
-        static int tableWidth = 50;
-        public static void StartTable()
-        {
-            Console.Clear();
-            PrintTable.PrintLine();
-            PrintTable.PrintRow("COURSE & CODE", "Column 2", "Column 3", "Column 4", "Column 5", "Column 6");
-            PrintTable.PrintLine();
-            PrintTable.PrintRow("", "", "", "", "");
-            PrintTable.PrintRow("", "", "", "", "");
-            PrintTable.PrintLine();
-            Console.ReadLine();
-        }
+        public static int tableWidth = 100;
+       
         public static void PrintLine()
         {
             Console.WriteLine(new string('-', tableWidth));
