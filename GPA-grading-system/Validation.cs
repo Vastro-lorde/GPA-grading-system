@@ -6,7 +6,7 @@ namespace GPA_grading_system
 {
     public class Validation
     {
-        public static bool inputValidation(string Input)
+        public static bool NumInputValidation( string Input)
         {
             bool success = int.TryParse(Input, out _);
             if (success)
@@ -18,6 +18,17 @@ namespace GPA_grading_system
                 return false;
             }
 
+        }
+        public static bool CourseInputValidation(string courseName)
+        {
+            if (courseName.Length > 3)
+            {
+                return false;
+            }
+            else
+            {
+                return true ;
+            }
         }
     }
 }

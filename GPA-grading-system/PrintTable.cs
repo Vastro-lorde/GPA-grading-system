@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GPA_grading_system
 {
-    public static class PrintTable
+    public class PrintTable
     {
         public static int tableWidth = 100;
        
@@ -38,6 +39,19 @@ namespace GPA_grading_system
             {
                 return text.PadRight(width - (width - text.Length) / 2).PadLeft(width);
             }
+        }
+        public void MakeDynamicTable( List<List<string>> savedCourses)
+        {
+            Console.Clear();
+            Console.WriteLine("Spirit University GPA");
+            PrintTable.PrintLine();
+            PrintTable.PrintRow("COURSE & CODE", "COURSE UNIT", "GRADE", "GRADE-UNIT", "WEIGHT Pt.", "REMARK");
+            PrintTable.PrintLine();
+            foreach (var course in savedCourses)
+            {
+                PrintTable.PrintRow((string)course[0], (string)course[1], (string)course[2], (string)course[3], (string)course[4], (string)course[5]);
+            }
+            PrintTable.PrintLine();
         }
     }
 }

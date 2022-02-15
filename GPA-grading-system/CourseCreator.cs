@@ -5,20 +5,22 @@ using System.Text;
 
 namespace GPA_grading_system
 {
-    public static class CourseCreator
+    public class CourseCreator
     {
+        public static List<List<string>> NewCourseList { get; set; } = new List<List<string>>();
 
-        public static ArrayList CourseCreate(string course, string courseCode, int courseUnit, string courseGrade, int gradeUnit, int weightPoint, string remark)
+        public List<string> CourseCreate(string course, int courseUnit, char courseGrade, int gradeUnit, int weightPoint, string remark)
         {
-            var newCourse = new ArrayList(7);
-            newCourse.AddRange(new ArrayList() { course, courseCode, courseUnit, courseGrade, gradeUnit, weightPoint, remark });
+            var newCourse = new List<string>(6);
+            newCourse.AddRange(new List<string>() { course.ToString(), courseUnit.ToString(), courseGrade.ToString(), gradeUnit.ToString(), weightPoint.ToString(), remark.ToString() });
+            Console.WriteLine("created course");
             return newCourse;
         } 
-        public static List<ArrayList> CourseListCreate(ArrayList newCourse)
+        public List<List<string>> CourseListCreate(List<string> newCourse)
         {
-            List<ArrayList> newCourseList = new List<ArrayList>();
-            newCourseList.ForEach(course => newCourseList.Add(newCourse));
-            return newCourseList;
+            NewCourseList.Add(newCourse);
+            Console.WriteLine("created course list");
+            return NewCourseList;
         }
     }
 }
