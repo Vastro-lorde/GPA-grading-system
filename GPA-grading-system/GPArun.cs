@@ -92,7 +92,7 @@ namespace GPA_grading_system
                     /*function to create the arraylist should be here*/
                     (courseGrade, gradeUnit, weightPoint, remark) = Calculate.ScoreGradeUnitWeight(Convert.ToInt32(courseScore), Convert.ToInt32(courseUnit));
 
-                    var saveCourse = creator.CourseCreate(course, Convert.ToInt32(courseUnit), courseGrade, gradeUnit, weightPoint, remark);
+                    var saveCourse = creator.CourseCreate(courseCode, Convert.ToInt32(courseUnit), courseGrade, gradeUnit, weightPoint, remark);
                     savedCourses =creator.CourseListCreate(saveCourse);
                    
                     Console.WriteLine("Enter \"Y\" if you which to add another course else type \"N\"");
