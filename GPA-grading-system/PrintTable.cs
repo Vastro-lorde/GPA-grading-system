@@ -49,7 +49,7 @@ namespace GPA_grading_system
             PrintTable.PrintLine();
             foreach (var course in savedCourses)
             {
-                PrintTable.PrintRow((string)course[0], (string)course[1], (string)course[2], (string)course[3], (string)course[4], (string)course[5]);
+                PrintTable.PrintRow(course[0], course[1], course[2], course[3], course[4], course[5]);
             }
             PrintTable.PrintLine();
         }
